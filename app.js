@@ -1,9 +1,10 @@
 /*
-build 4 classes to pass tests
+done build 4 classes to pass tests
     1. Run tests
     2. Create or update classes to pass a single test case
     3. Repeat
-import prompt library from README copy.md
+
+    import prompt library from README copy.md
 ask the following questions:
     it is my understanding that you want to build an engineering team? 
         yes or no
