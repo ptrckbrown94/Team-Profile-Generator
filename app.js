@@ -19,3 +19,55 @@ show html to person
 */
 
 const inquirer = require("inquirer");
+
+
+inquirer.prompt({
+    message: "It is my understanding that you want to build an engineering team?",
+    name: "answer"
+    })
+.then(function({answer, }){
+console.log(answer)
+if(answer === "yes"){
+
+   setUpQuestions()
+} else {
+
+console.log("I guess we're all done!")
+}
+
+});
+
+function setUpQuestions(){
+    inquirer.prompt({
+        type: "list",
+        message: "How big do you want your team?",
+        choices: [2, 3, 4, 5, 6, 7, 8], 
+        name: "answer"
+        })
+        .then(function(response) {
+            createEmployees(response.answer)
+        })
+}
+
+function createEmployees(numberOfEmployees) {
+    console.log(numberOfEmployees)
+    let employeeNumber = 0;
+
+    function makeSingleEmployee() {
+        if (employeeNumber >= numberOfEmployees) {
+            // create a new employee with inquirer
+            // add one to employeeNumber
+            makeSingleEmployee()
+
+        }
+        // continue doing stuff
+    }
+}
+function generalQuestions(){
+    //array of questions for inquirer 
+    //.thenk(function(response))
+    // switch statements 
+    // if they say enginer => engineeerQuestion 
+    // if they say intern => internQuestion
+    // If they say manager => managerQuestion
+}
