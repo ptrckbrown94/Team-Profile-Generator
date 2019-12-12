@@ -19,7 +19,7 @@ I built this application with the help from my instructor and TAs from Triology.
 ## Challenges
 
 ## Live Site
-
+ https://ptrckbrown94.github.io/Team-Profile-Generator/
 
 ## Screenshots
 ![image]()
