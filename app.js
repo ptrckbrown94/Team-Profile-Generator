@@ -18,4 +18,3 @@ show html to person
 */
 
 const inquirer = require("inquirer");
-const jest = require("jest");
