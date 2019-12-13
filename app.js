@@ -48,10 +48,13 @@ function setUpQuestions() {
         type: "question",
         message:"what is the employee's ID",
         name:"id"
-
     },
 
-
+    {
+        type:"question",
+        message: "what is the employee's email address",
+        name: "email"
+    },
 
     {
         type: "list",
@@ -90,7 +93,7 @@ function generalQuestions() {
             message: "What title does the team member have?",
             choices: ["Manager", "Enginer", "Intern"],
             name: "answer"
-        })
+        }
         .then(function (response) {
             createEmployees(response.answer)
         })
@@ -99,7 +102,7 @@ function generalQuestions() {
     // if they say enginer => engineeerQuestion 
     // if they say intern => internQuestion
     // If they say manager => managerQuestion
-}
+
 
 
 const newIntern = new Intern(input.name, input.id, input.email, response.school)
