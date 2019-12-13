@@ -1,7 +1,7 @@
 # Team-Profile-Generator
 
 ## Description 
-This application is an elegant solution for searching for a recipe based on the user’s local temperature. Users can search for main ingredients and the application will return a list of recipes appropriate for the current temperature. For example, if the temperature is below freezing, the app will return more soups, baked goods, casseroles, and comfort foods. If it is very warm outside, more grillable foods, cold salads and blended beverages will appear. 
+This application would be used to help generate a roster of employees for a project. 
 
 
 ## Installation 
@@ -17,6 +17,7 @@ I created this project from the outline given to us by our Triology Education Se
 I built this application with the help from my instructor and TAs from Triology. I also had addditoinal help from my classmates and tutors. 
 
 ## Challenges
+I had issues with my for loop and using inquirer. The for loop was running while I was trying to answer the questions about job title. The loop would continue to run before I could answer the questions. I was not able to fix this issue. Because of this "bug" I was not able to finish the homework in time.  
 
 ## Live Site
  https://ptrckbrown94.github.io/Team-Profile-Generator/

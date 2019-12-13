@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/ptrckbrown94/Team-Profile-Generator#readme",
   "dependencies": {
+    "fs": "0.0.1-security",
     "inquirer": "^7.0.0",
     "jest": "^24.9.0"
   }

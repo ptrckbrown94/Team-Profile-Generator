@@ -5,31 +5,34 @@ done build 4 classes to pass tests
     3. Repeat
 
     import prompt library from README copy.md
-ask the following questions:
+    ask the following questions:
     it is my understanding that you want to build an engineering team? 
-        yes or no
+    yes or no
     how many employees for the team (1-10)
-use prompt to ask for new employee from user
+
+ need to still do   
+    use prompt to ask for new employee from user
     name, id, email, employee type (string)
-add employee to array/list of employees
-4loop for employee data entry 
-loop over all employees and generate htlm
-show html to person 
+    add employee to array/list of employees
+    4loop for employee data entry 
+    loop over all employees and generate htlm
+    show html to person 
 
 */
 
 const inquirer = require("inquirer");
+const fs = require("fs");
 
 
 inquirer.prompt({
-    message: "It is my understanding that you want to build an engineering team?",
+    message: "It is my understanding that you want to build an engineering team",
     name: "answer"
 })
     .then(function ({ answer, }) {
-        console.log(answer)
+        console.log("You entered: " + answer)
         if (answer === "yes") {
 
-            setUpQuestions()
+            setUpQuestions();
         } else {
 
             console.log("I guess we're all done!")
@@ -37,21 +40,23 @@ inquirer.prompt({
 
     });
 
+
+
 function setUpQuestions() {
     inquirer.prompt([{
         type: "question",
         message: "What is the team member's name?",
         name: "name"
-    }, 
-
-    {
-        type: "question",
-        message:"what is the employee's ID",
-        name:"id"
     },
 
     {
-        type:"question",
+        type: "question",
+        message: "what is the employee's ID",
+        name: "id"
+    },
+
+    {
+        type: "question",
         message: "what is the employee's email address",
         name: "email"
     },
@@ -64,48 +69,56 @@ function setUpQuestions() {
     }])
         .then(function (response) {
             createEmployees(response.answer)
-        })
+        });
 }
 
 function createEmployees(numberOfEmployees) {
-    console.log(numberOfEmployees)
-    let employeeNumber = 0;
+    console.log("number of employees =" + numberOfEmployees)
+    
+    for (let i = 0; i < numberOfEmployees; i++) {
 
-    function makeSingleEmployee() {
-        if (employeeNumber >= numberOfEmployees) {
-            // create a new employee with inquirer
-            // add one to employeeNumber
-            makeSingleEmployee()
-
-        }
-        // continue doing stuff
+        askEmployeeType()
     }
 }
-function generalQuestions() {
+
+function askEmployeeType() {
     //array of questions for inquirer 
     //.thenk(function(response))
     // switch statements 
-
-    inquirer.prompt([
+    console.log("working")
+    inquirer.prompt(
 
         {
             type: "list",
             message: "What title does the team member have?",
             choices: ["Manager", "Enginer", "Intern"],
-            name: "answer"
-        }
-        .then(function (response) {
-            createEmployees(response.answer)
+            name: "employeeType"
         })
+       
+        //Elliot Trejos helped wth the switch 
+        .then(function (response) {
+            console.log("check switch")
+            switch (response.employeeType) {
+                case "Intern":
+                    internQuestion(response);
+                    return;
+                case "Engineer":
+                    engineerQuestion(response);
+                    return;
+                case "Manager":
+                    managerQuestion(response);
+                    return;
+                default:
+                    return;
+            }
+            
+
+        });
+        console.log("broken")
+}
 
 
-    // if they say enginer => engineeerQuestion 
-    // if they say intern => internQuestion
-    // If they say manager => managerQuestion
-
-
-
-const newIntern = new Intern(input.name, input.id, input.email, response.school)
+//const newIntern = new Intern(input.name, input.id, input.email, response.school)
 // console.log(newIntern)
 // {
 // name: input.name,
@@ -114,7 +127,7 @@ const newIntern = new Intern(input.name, input.id, input.email, response.school)
 // school: resposnse.school
 // }
 
-const newManager = new newManager(input.name, input.id, input.email, response.officeNumber)
+//const newManager = new newManager(input.name, input.id, input.email, response.officeNumber)
 // console.log(newManager)
 // {
 // name: input.name,
@@ -123,13 +136,16 @@ const newManager = new newManager(input.name, input.id, input.email, response.of
 // office: input.officeNmber    
 // }
 
-function internQuestion(input) {
-    // inquirer stuff
-    // .then(function(response) {
-    //    console.log(response) - engineer question and answer
-    //    console.log(input) - intern question and answer
-    //    create a new Intern with the responses
-    // })
-}
-// [ q4. question specific to job]
-
+//function internQuestion(input) {
+//    // inquirer stuff
+//    // .then(function(response) {
+//    console.log("response")
+//    //    console.log(input) - intern question and answer
+//    //    create a new Intern with the responses
+//    // })
+//}
+//// [ q4. question specific to job]
+//
+//function engineerQuestion() {
+//
+//}
